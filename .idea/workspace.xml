@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5ef218c-350d-4a46-8af5-67f06de8fc7a" name="更改" comment="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能" />
+    <list default="true" id="b5ef218c-350d-4a46-8af5-67f06de8fc7a" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/OSassistant.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ChangesViewManager">
-    <option name="groupingKeys">
-      <option value="directory" />
-    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -23,11 +26,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -42,19 +40,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.inference.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.train.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.inference.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.model.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.train.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -71,95 +69,6 @@
       <option name="presentableId" value="Default" />
       <updated>1752665977144</updated>
     </task>
-    <task id="LOCAL-00001" summary="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能">
-      <option name="closed" value="true" />
-      <created>1752977335038</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1752977335038</updated>
-    </task>
-    <task id="LOCAL-00002" summary="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能">
-      <option name="closed" value="true" />
-      <created>1752978076524</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1752978076524</updated>
-    </task>
-    <task id="LOCAL-00003" summary="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能">
-      <option name="closed" value="true" />
-      <created>1752978166464</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1752978166464</updated>
-    </task>
-    <task id="LOCAL-00004" summary="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能">
-      <option name="closed" value="true" />
-      <created>1752978287501</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1752978287501</updated>
-    </task>
-    <task id="LOCAL-00005" summary="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能">
-      <option name="closed" value="true" />
-      <created>1752978707770</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1752978707770</updated>
-    </task>
-    <task id="LOCAL-00006" summary="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能">
-      <option name="closed" value="true" />
-      <created>1752979619536</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1752979619536</updated>
-    </task>
-    <task id="LOCAL-00007" summary="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能">
-      <option name="closed" value="true" />
-      <created>1752989960950</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1752989960950</updated>
-    </task>
-    <task id="LOCAL-00008" summary="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能">
-      <option name="closed" value="true" />
-      <created>1752990068353</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1752990068354</updated>
-    </task>
-    <task id="LOCAL-00009" summary="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能">
-      <option name="closed" value="true" />
-      <created>1752990305526</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1752990305526</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能" />
-    <MESSAGE value="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能" />
   </component>
 </project>
