@@ -1,52 +1,19 @@
-# inference_without_lora.py
-from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from model import load_model_and_tokenizer  # 导入加载函数
 import torch
-import os
-
-# 1. 配置路径
-base_model_name = "deepseek-ai/deepseek-llm-7b-base"
-cache_dir = "./models"
-offload_folder = "./model_offload"
-os.makedirs(offload_folder, exist_ok=True)
-
-# 2. 加载分词器
-tokenizer = AutoTokenizer.from_pretrained(
-    base_model_name,
-    cache_dir=cache_dir
-)
-tokenizer.pad_token = tokenizer.eos_token
-
-# 3. 加载量化配置（与之前保持一致）
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_use_double_quant=True,
-    bnb_4bit_quant_type="nf4",
-    bnb_4bit_compute_dtype=torch.float16
-)
-
-# 4. 加载基础模型（不应用任何LoRA适配器）
-model = AutoModelForCausalLM.from_pretrained(
-    base_model_name,
-    quantization_config=bnb_config,
-    device_map="auto",
-    cache_dir=cache_dir,
-    offload_folder=offload_folder,
-    trust_remote_code=True
-)
-model.eval()  # 推理模式
 
 
-# 5. 推理函数（输入格式与LoRA版本保持一致）
-def generate_answer(question, max_new_tokens=512, temperature=0.7):
-    input_text = f"Instruction: {question}\nOutput:"
+def generate_answer(model, tokenizer, question, max_new_tokens=512, temperature=0.7):
+    """使用加载好的模型和分词器生成回答"""
+    # 输入格式必须与训练一致
+    input_text = f"Instruction: {question}\nOutput: "
     inputs = tokenizer(
         input_text,
         return_tensors="pt",
         truncation=True,
-        max_length=512,
-        padding="max_length"
-    ).to(model.device)
+        max_length=512
+    ).to(model.device)  # 自动匹配模型设备
 
+    # 推理（禁用梯度计算节省显存）
     with torch.no_grad():
         outputs = model.generate(
             **inputs,
@@ -57,15 +24,33 @@ def generate_answer(question, max_new_tokens=512, temperature=0.7):
             eos_token_id=tokenizer.eos_token_id
         )
 
-    return tokenizer.decode(outputs[0], skip_special_tokens=True)
+    # 解码生成的内容
+    generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+    # 提取Output部分
+    output_start = input_text.rfind("Output: ") + len("Output: ")
+    answer = generated_text[output_start:].strip()
+
+    return answer
 
 
-# 6. 测试推理
+# 主程序：加载模型并测试推理
 if __name__ == "__main__":
-    question = "操作系统的双重模式是啥"
+    # 1. 加载模型和分词器（只需要加载一次）
     try:
-        answer = generate_answer(question)
-        print(f"问题：{question}")
-        print(f"回答：{answer}")
+        model, tokenizer = load_model_and_tokenizer()
+        print("模型加载成功！")
     except Exception as e:
-        print(f"推理失败：{e}")
+        print(f"模型加载失败：{e}")
+        exit(1)
+
+    # 2. 测试推理
+    while True:
+        question = input("请输入问题（输入'退出'结束）：")
+        if question == "退出":
+            break
+        try:
+            answer = generate_answer(model, tokenizer, question)
+            print(f"\n回答：{answer}\n")
+        except Exception as e:
+            print(f"推理失败：{e}")    

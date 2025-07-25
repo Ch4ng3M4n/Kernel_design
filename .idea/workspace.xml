@@ -4,14 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5ef218c-350d-4a46-8af5-67f06de8fc7a" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/OSassistant.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b5ef218c-350d-4a46-8af5-67f06de8fc7a" name="更改" comment="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能">
+      <change beforePath="$PROJECT_DIR$/.idea/OSassistant.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OSassistant.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/train.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-1/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-1/adapter_config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-1/adapter_model.safetensors" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-1/optimizer.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-1/rng_state.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-1/scheduler.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-1/trainer_state.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-1/training_args.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-2/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-2/adapter_config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-2/adapter_model.safetensors" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-2/optimizer.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-2/rng_state.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-2/scheduler.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-2/trainer_state.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-2/training_args.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-3/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-3/adapter_config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-3/adapter_model.safetensors" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-3/optimizer.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-3/rng_state.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-3/scheduler.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-3/trainer_state.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_fine_tuned/checkpoint-3/training_args.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_lora_adapter/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_lora_adapter/adapter_config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepseek_lora_adapter/adapter_model.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +56,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -42,14 +70,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.dataset.executor": "Run",
     "Python.inference.executor": "Run",
     "Python.main.executor": "Run",
     "Python.model.executor": "Run",
     "Python.test.executor": "Run",
     "Python.train.executor": "Run",
+    "Python.train1.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog"
   }
 }]]></component>
@@ -69,6 +99,19 @@
       <option name="presentableId" value="Default" />
       <updated>1752665977144</updated>
     </task>
+    <task id="LOCAL-00001" summary="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能">
+      <option name="closed" value="true" />
+      <created>1752992710472</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752992710473</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="本次提交包含DeepSeek模型微调训练的基础实现&#10;&#10;核心代码：&#10;- 新增训练主程序 train.py：实现数据加载、模型初始化、LoRA微调逻辑&#10;- 推理脚本 inference.py：支持加载训练后的adapter模型进行预测&#10;- 模型配置文件 model.py：定义模型结构及微调参数&#10;- 主入口 main.py：整合训练/推理流程，支持命令行参数配置&#10;&#10;训练相关文件：&#10;- 保存3个训练 checkpoint（checkpoint-1/2/3）：包含adapter权重、优化器状态、训练参数&#10;- LoRA适配器最终权重：deepseek_lora_adapter/ 目录下的adapter_model.bin及配置文件&#10;- 训练数据集：data/train.json 基础训练数据&#10;&#10;主要功能:&#10;1. 基于Hugging Face Transformers库构建&#10;2. 支持DeepSeek系列模型加载与微调&#10;3. 包含数据预处理、模型训练流程&#10;5. 基础推理功能和模型保存功能" />
   </component>
 </project>
